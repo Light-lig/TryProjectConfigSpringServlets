@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group = 'com.example'
+version = '1.0-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+	providedCompile 'javax.servlet:javax.servlet-api:4.0.1'
+	
+    // Spring Framework Core
+    implementation 'org.springframework:spring-context:5.3.25'
+    implementation 'org.springframework:spring-jdbc:5.3.25'
+    implementation 'org.springframework:spring-tx:5.3.25'
+    implementation 'org.springframework.data:spring-data-jpa:2.7.8'
+    implementation 'org.springframework:spring-orm:5.3.25'
+    implementation 'org.hibernate:hibernate-core:5.6.15.Final'
+    implementation 'javax.persistence:javax.persistence-api:2.2'
+    
+    implementation 'mysql:mysql-connector-java:8.0.32'
+    
+       // Thymeleaf (for templates)
+    implementation 'org.thymeleaf:thymeleaf:3.0.15.RELEASE'
+}
+
+
+tasks.war {
+    archiveBaseName = 'template-crud-app'
+    archiveVersion = '1.0'
+}
